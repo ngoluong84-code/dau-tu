@@ -1,0 +1,43 @@
+HƯỚNG DẪN ĐƯA BẢNG ĐIỀU KHIỂN ĐẦU TƯ LÊN WEB (GitHub Pages - miễn phí)
+=====================================================================
+
+Thư mục này là web tĩnh (index.html + css + js). Không cần server, không cần build.
+
+CÁCH 1 - Dùng giao diện web GitHub (không cần cài gì)
+1. Vào https://github.com/new , tạo repo tên: dau-tu  (chọn Private hoặc Public).
+   Lưu ý: GitHub Pages miễn phí cho repo Private cần gói trả phí; repo Public thì miễn phí.
+   Dữ liệu của bạn KHÔNG nằm trong repo (nằm trong trình duyệt), nên để Public vẫn ổn;
+   dữ liệu DCA gốc đã được mã hoá bằng mật khẩu.
+2. Bấm "uploading an existing file", kéo thả TOÀN BỘ nội dung thư mục này
+   (index.html, thư mục css, thư mục js) rồi Commit.
+3. Vào Settings -> Pages -> Source: "Deploy from a branch" -> Branch: main, thư mục / (root) -> Save.
+4. Chờ ~1 phút, link dạng:  https://ngoluong84-code.github.io/dau-tu/
+
+CÁCH 2 - Dùng PowerShell (git)
+  cd "C:\DU LIEU\COWORK\ĐẦU TƯ"
+  git init
+  git add .
+  git commit -m "dashboard dau tu"
+  git branch -M main
+  git remote add origin https://github.com/ngoluong84-code/dau-tu.git
+  git push -u origin main
+  (sau đó bật Pages như bước 3 ở trên)
+
+CẬP NHẬT SAU NÀY: sửa file -> git add . ; git commit -m "update" ; git push
+
+DỮ LIỆU
+- Mỗi trình duyệt/thiết bị có dữ liệu riêng (localStorage). Link web mới = dữ liệu trống/mẫu.
+- Chuyển sang máy khác: ⚙ Cài đặt -> Xuất JSON, rồi Nhập JSON ở máy kia.
+- Hoặc đồng bộ tự động: ⚙ Cài đặt -> dán GitHub token (quyền "gist") -> "Đẩy lên Gist";
+  máy khác nhập cùng token + Gist ID -> "Kéo từ Gist".
+- Nên xuất JSON sao lưu mỗi tuần.
+
+TAB DCA BTC (tab cuối)
+- Dùng lại mật khẩu cũ của dự án dca-btc. Dữ liệu gốc đã mã hoá sẵn trong js/dca-seed.js.
+- Các lần mua bạn đã thêm trên web Netlify cũ nằm ở trình duyệt khác domain nên không tự sang.
+  Cách chuyển: trên web cũ bấm "Xuất CSV", rồi ở tab DCA BTC mới bấm "Nhập CSV".
+
+GIÁ TỰ ĐỘNG
+- Khi chạy online, nút "⟳ Cập nhật giá" lấy giá từ CoinGecko / DexScreener / Binance.
+  Dự án cần điền CoinGecko ID (vd: bitcoin) hoặc Contract (meme) để tự lấy giá; nếu không thì nhập giá tay.
+- Fear & Greed, BTC dominance, tỷ giá VND, tin tức cũng lấy từ API miễn phí (có thể bị giới hạn tốc độ).

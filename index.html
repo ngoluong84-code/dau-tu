@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bảng điều khiển đầu tư</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<div id="shell">
+ <header class="top"><h1>📊 Bảng điều khiển đầu tư</h1><span class="sp"></span><button class="ghost sm" id="btnRefresh">⟳ Cập nhật giá</button><button class="ghost sm" id="btnSet">⚙ Cài đặt</button></header>
+ <nav class="tabs" id="tabs"></nav>
+ <main id="view"></main>
+</div>
+<div id="modal"></div><div id="toast"></div>
+<script src="js/dca-seed.js"></script>
+<script src="js/core.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/tab-overview.js"></script>
+<script src="js/tab-portfolio.js"></script>
+<script src="js/tab-plan.js"></script>
+<script src="js/tab-journal.js"></script>
+<script src="js/tab-market.js"></script>
+<script src="js/tab-dca.js"></script>
+</body>
+</html>
